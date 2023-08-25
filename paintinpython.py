@@ -202,13 +202,13 @@ tochka.place(x=205, y=1)
 info = tochka.place_info()
 
 # кнопки для перемещения кисти
-btnup = tk.Button(win, text=' ^ ', bd=1, font='Arial 20', command=lambda: up())
-btnup.place(x=75, y=350)
-btnleft = tk.Button(win, text=' < ', bd=1, font='Arial 20', command=lambda: left())
-btnleft.place(x=20, y=405)
-btnright = tk.Button(win, text=' > ', bd=1, font='Arial 20', command=lambda: right())
+btnup = tk.Button(win, text=' 🔼 ', bd=1, font='Arial 19', command=lambda: up())
+btnup.place(x=75, y=358)
+btnleft = tk.Button(win, text=' ◀ ', bd=1, font='Arial 20', command=lambda: left())
+btnleft.place(x=23, y=405)
+btnright = tk.Button(win, text=' ▶ ', bd=1, font='Arial 20', command=lambda: right())
 btnright.place(x=126, y=405)
-btndown = tk.Button(win, text='\/', bd=1, font='Arial 20', padx=7, command=lambda: down())
+btndown = tk.Button(win, text='🔽', bd=1, font='Arial 20', padx=6, command=lambda: down())
 btndown.place(x=75, y=405)
 
 # параметры для кисти
