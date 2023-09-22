@@ -1,0 +1,24 @@
+from bs4 import BeautifulSoup
+import requests
+
+
+link = 'https://whatstat.ru/channel/UC84J-P1AEat5jPz7C1vKhsw'
+
+responce = requests.get(link).text
+block = BeautifulSoup(responce, 'lxml')
+
+info = block.find('div', class_='col-lg-8')
+
+# name youtube channel
+name = info.find('h1', class_="channel-header").text.strip()
+
+# all information about channel
+follow = info.find_all('table', class_="table")[0]
+info = follow.find_all('td')
+
+end_str = f'{name}\n'
+for i in range(0,13):
+    if i % 2 == 0:
+        end_str += f"{str(info[i].text.strip())}: {str(info[i + 1].text.strip())}\n"
+
+print(end_str)
